@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: gray;
+}
+
+
+.first-container {
+    background-color: burlywood;
+    height: 180px;
+}
+
+.box {
+    border-radius: 15px;
+    border: 8px solid red;
+    box-shadow: 8px 8px 2px purple;
+}
+
+.first-container-box  {
+    position: relative;
+    left: 400px;
+    top: 15px;
+    background-color: aliceblue;
+    height: 150px;
+    width: 30%;
+    
+}
+
+.first-container-box h1{
+    padding-top: 10px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: rgb(146, 5, 5);
+    text-shadow: 2px 2px 2px purple;
+}
+    
+
+.text-shadow-text {
+    margin-top: 40px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: rgb(5, 5, 47);
+    text-shadow: 2px 2px 2px purple;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+hr {
+    margin-bottom: 8px;
+    height: 3px;
+    background-color: white;
+}
+
+.float-container {
+    border: 8px solid greenyellow;
+    height: 850px;
+}
+
+.float-container-one, .float-container-two, .float-container-three, .float-container-four {
+    width: 20%;
+    height: 300px;
+    margin: 10px;
+}
+
+.float-container-two img {
+    height: 200px;
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.float-container-one {
+    float: left;
+}
+
+.float-container-two {
+    float: right;
+    margin-right: 120px;
+}
+
+.float-container-three {
+    clear: left;
+    float: left;
+}
+
+.float-container-four {
+    float: right;
+    margin-right: 120px;
+}
+
+.float-container-three, .float-container-four {
+    margin-top: 200px;
+}
+
+.float-container-four form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.float-container-four form button{
+    border-radius: 15px;
+    padding: 3px;
+    background-color: red;
+    color: white;
+}
+.welcome_to_store {
+    margin: 0 auto;
+    height: 600px;
+    width: 740px;
+    margin-top: 50px;
+    text-align: center;
+    background-color:green;
+    border: 8px solid purple;
+    margin-bottom: 60px;
+}
+.fruits{
+    height: 250px;
+    width: 345px;
+    background-color:rgb(247, 247, 139);
+    float: left;
+    margin-top: 40px;
+    margin-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.vegetables{
+    height: 250px;
+    width: 345px;
+    background-color:rgb(247, 247, 139);
+    float:right;
+    margin-right: 10px;
+    margin-top: 40px;
+    padding-top: 10px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.other_items{
+    height: 240px;
+    width: 700px;
+    background-color:rgb(247, 247, 139);
+    float:left;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    text-transform: uppercase;
+    
+}
+
+.fixed {
+    display: flex;
+    width: 40%;
+    height: 100px;
+    justify-content: space-between;
+    background-color: greenyellow;
+    position: fixed;
+    bottom: 40px;
+    left: 400px;
+}
+
+.fixed h2{
+    color: rgb(104, 13, 13);
+    margin: 12px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    font-size: 1.7rem;
+}
+
+.fixed p {
+    color: rgb(104, 13, 13);
+    margin: 15px;
+    font-weight: bolder;
+    font-size: 1.4rem;
+}
+
+
