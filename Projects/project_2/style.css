@@ -4,7 +4,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+
+html,body{  
     font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
 }
 
 .main {
@@ -185,6 +190,7 @@ input[type=checkbox]:checked + label {
     visibility: hidden;
     opacity: 0;
   }
+
   .overlay:target {
     visibility: visible;
     opacity: 1;
@@ -200,6 +206,82 @@ input[type=checkbox]:checked + label {
     box-shadow: 0 3px 10px #00a5ecc4;
 }
 
+/* media Query for mobile */
+@media only screen and (max-width:480px){
+
+    nav{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        height: 70px;
+        padding: 0 2%;
+    }
+
+    nav h1{
+        padding: 0;
+        font-size: 30px;
+   }
+
+   /* .first-container a {
+    background-color: blue;
+   } */
+
+   .first-container{
+    justify-content: center;
+    height: 100px;
+    padding: 0 2%;
+   }
+
+   .first-container .add-button {
+    margin-right: 0;
+    width: 100%;
+   }
+
+   .first-container .add-button h3{
+    display: none;
+   }
+
+   .first-container .add-button .add-logo{
+    height: 40px;
+    width: 40px;
+   }
+
+   /* second container */
+   .second-container{
+    width: 100%;
+    margin: 0;
+    padding: 30px 2%;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    row-gap: 10px;
+    
+   }
+
   
+
+   /* popup */
+   .popup {
+    left: 3%;
+    width: 350px;
+    height: 200px;
+   }
+
+   .popup .fade {
+    width: 300px;
+    height: 30px;
+   }
+
+   .popup .fade p {
+    font-size: 16px;
+    padding: 5px 14px;
+}
+
+.popup button {
+    height: 30px;
+    width: 120px;
+    margin-left: 200px;
+}
+
+}
 
   
