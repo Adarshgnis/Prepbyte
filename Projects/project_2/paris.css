@@ -216,7 +216,7 @@ input[type=checkbox]:checked + label {
   }
 
 
-  @media only screen and (max-width:480px){
+  @media only screen and (max-width:680px){
 
     nav{
         display: flex;
@@ -260,10 +260,14 @@ input[type=checkbox]:checked + label {
     width: 100%;
     margin: 0;
     padding: 30px 2%;
-    grid-template-columns: 1fr;
-    gap: 0px;
-    row-gap: 10px;
+    /* grid-template-columns: 1fr; */
+    /* gap: 0px; */
+    /* row-gap: 10px; */
     
+   }
+
+   .box {
+    width: 80%;
    }
 
   
@@ -289,6 +293,30 @@ input[type=checkbox]:checked + label {
     height: 30px;
     width: 120px;
     margin-left: 200px;
+}
+
+.first-container .back-button {
+    height: 80px;
+    width: 190px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    
+}
+
+.first-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.first-container .back-button h3 {
+    display: none;
+}
+
+.first-container .back-button .back-logo {
+    height: 40px;
+    width: 40px;
 }
 
 }
