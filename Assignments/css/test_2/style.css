@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* Background color */
+    background: linear-gradient(-45deg, #EE6685, #E12C6E, #2a7296, #22bdc0);
+    background-size: 400% 400%;
+    animation: anime 15s ease-in-out infinite;
+    height: 100vh;
+    /* h1 Styling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h1 span {
+    display: inline-flex;
+    color: rgb(233, 148, 148);
+}
+
+h1 span:nth-child(even) {
+    overflow: hidden;
+    color: white;
+    transition: ease-in-out .5s;
+    letter-spacing: -1em;
+}
+
+h1:hover span:nth-child(even) {
+    letter-spacing: 0;
+}
+
+
+/* animation */
+@keyframes anime {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
