@@ -778,5 +778,297 @@
     </pre
       >
     </div>
+
+    <h1>Strings</h1>
+    <div class="box">
+      <h3>Count Characters</h3>
+      <p>
+        You are given a string S, and your task is to return an array B (having a size of 2), where B[0] contains the count of character A (uppercase) in string S and B[1] contains the count of character D (uppercase) in string S.
+      </p>
+      <br />
+      <pre>
+        const countCharacters = (S) => 
+        {
+            let B = []
+            let countA = 0;
+            let countD = 0;
+            for(i = 0; i < S.length; i++){
+              if(S[i] === "A" ) {
+                countA += 1;
+              } else if (S[i] === "D"){
+                countD +=1;
+              }
+            }
+            B.push(countA)
+            B.push(countD)
+            return B
+        };
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Count the Heads</h3>
+      <p>
+        Tina is given a string  S which contains the first letter of all the student names in her class. She got a curiosity to check how many people have their names starting from the same alphabet. So given a string  S , she decided to write a code that finds out the count of characters that occur more than once in the string.
+      </p>
+      <br />
+      <pre>
+        var Count_Occ = (s) => 
+        {
+          // first we create an array called alphabets
+            const alphabets = []
+            // with the help of this loop we converted the string s into an array
+            for(let i=0; i < s.length; i++){
+              alphabets.push(s.charAt(i) );
+            }
+            // We filtered the repetative value and store in the variable repeat_value 
+            const repeat_value = alphabets.filter( (alphabet, index) => alphabets.indexOf(alphabet) !==  alphabets.lastIndexOf(alphabet) )
+            // then we sorted this array
+            repeat_value.sort(repeat_value)
+            
+            // then we created a new string
+            let newStr = ''
+            // created a new variable counter and assign 1 
+            counter = 1
+            
+            // in this loop we check how many times the character repeat
+            for(let i = 0; i < repeat_value.length; i++){
+              // we check if the current value is equal to next value then we increment the counter by 1
+              if(repeat_value[i] === repeat_value[i+1]) {
+                counter += 1
+              } 
+              // if the current value is not equal to next value then we print the repetative value + how many time the value repeat that is counter
+              else {
+                newStr += repeat_value[i] + counter
+                // and then we assign counter to 1
+                counter = 1
+              }
+            }
+            // here we print the final string
+            return newStr
+        };
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Count the Vowels</h3>
+      <p>
+        You are given a string S containing both uppercase and lowercase letters. You need to find out the number of vowels in the given string.
+      </p>
+      <br />
+      <pre>
+        var Count_Vowels= (S) => 
+        {
+            let vowelsCount = 0;
+            let newS = S.toLowerCase();
+            for(i = 0; i < S.length; i++) {
+              if(newS.charAt(i) == "a" || newS.charAt(i) == "e" || newS.charAt(i) == "i" || newS.charAt(i) == "o" || newS.charAt(i) == "u") {
+                vowelsCount += 1;
+              }
+            }
+            return vowelsCount;
+        };
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Concatenate the Strings</h3>
+      <p>
+        You are given two strings S1 and S2 (containing both uppercase and lowercase letters), You need to retrun a string which is the concatenation of both the given strings.
+      </p>
+      <br />
+      <pre>
+        var Concatenate_Strings = (S1, S2) => 
+        {
+            let S3 = S1 + S2;
+            return S3;
+        };
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Find Length</h3>
+      <p>
+        You are given a string S, and your task is to return the length of the string S.
+      </p>
+      <br />
+      <pre>
+        const findLength = (S) => 
+        {
+            let count = 0;
+            for(i = 0; i < S.length; i++) {
+              count += 1;
+            }
+            
+            return count;
+        };
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Find the Winner</h3>
+      <p>
+        You are given a string S consisting of two letters A and D,where each character represent the winner of N games played between Aditya and Danish, where letter A represents the win of Aditya and letter D represents the win of Danish. You need to find out the that which player wins the maximum number of games or there is a draw between them.
+      </p>
+      <br />
+      <pre>
+        var Game_Winner = (S) => 
+        {
+          let aditya = 0;
+          let danish = 0;
+          
+          for(i = 0; i < S.length; i++) {
+            if(S[i] === "A") {
+              aditya += 1;
+            } else {
+              danish += 1;
+            }
+          }
+          if(aditya > danish) {
+            return "Aditya"
+          } else if(danish > aditya) {
+            return "Danish"
+          } else {
+            return "Draw"
+          }
+        
+        }
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Join Strings</h3>
+      <p>
+        You are given two strings S and P, and your task is to concatenate them and return the concatenated string.
+      </p>
+      <br />
+      <pre>
+        const joinStrings = (S, P) => 
+        {
+            return (S+P)
+        };
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Plaindrome Check</h3>
+      <p>
+        You are given a string S, Your task is to check wether the given string is a Palindrome or not. Palindrome is a string, which turnout same when read in reverse direction. Example: "naman" is a Palindrome. String can contain both upppercase lowercase letters.
+      </p>
+      <br />
+      <pre>
+        var Palin_Check = (str) =>
+        {
+           const forwardArr = []
+           const backwardArr = []
+           let counter = 0
+           
+           for(let i=0; i < str.length; i++) {
+             forwardArr.push(str.charAt(i))
+           }
+           
+           for(let i = str.length-1; i >= 0; i--) {
+             backwardArr.push(str.charAt(i))
+           }
+           
+           for(let i = 0; i < str.length; i++) {
+             if(forwardArr[i] === backwardArr[i]) {
+               counter += 1
+             }
+           }
+           
+           if(counter === str.length) {
+             return "True"
+           } else {
+             return "False"
+           }
+        }
+        </pre
+      >
+    </div>
+    <div class="box">
+      <h3>Reverse the String</h3>
+      <p>
+        You are given a string S, Your task is to Reverse the string. String can contain both upppercase lowercase letters. 
+      </p>
+      <br />
+      <pre>
+        var Reverse_String = (str) => 
+        {
+            const tempArr = [];
+            let reversedStr = '';
+            for(let i = str.length-1; i >= 0; i--) {
+              tempArr.push(str.charAt(i));
+            }
+            
+            for(let i = 0; i < tempArr.length; i++) {
+              reversedStr += tempArr[i];
+            }
+            
+            return reversedStr;
+        };
+        </pre
+      >
+    </div>
+    <div class="box">
+      <h3>Match the Strings</h3>
+      <p>
+        You are given two strings S1 and S2, Your task is to print YES if both strings are same else print NO.
+      </p>
+      <br />
+      <pre>
+        var String_Match = (S1,S2) => 
+        {
+              if(S1 === S2){
+                return "YES"
+              } else {
+                return "NO"
+              }
+        };
+      </pre>
+    </div>
+    <div class="box">
+      <h3>String Replace</h3>
+      <p>You are given a string S, along with a pattern string and a text string. You need to repalce the pattern string in S to the text string</p>
+      <br />
+      <pre>
+        var Replace = (S, pattern , text) => 
+        {
+            let string = S.replace(pattern, text)  
+            return string
+        };
+    </pre
+      >
+    </div>
+    <div class="box">
+      <h3>Split the String</h3>
+      <p>You are given a string S, Your task is to split the string with respect to spaces.</p>
+      <br />
+      <pre>
+        var Split_the_string = (S) => 
+        {
+            const newString = S.split(" ")
+            return newString
+        };
+    </pre
+      >
+    </div>
+    <div class="box">
+      <h3>Count the Vowels and Consonants</h3>
+      <p>You are given a string S containing both uppercase and lowercase letters. You need to find out the number of vowels and the number of consonants in the given string.</p>
+      <br />
+      <pre>
+        var Count_Vowels= (S) => 
+        {
+            let vowelsCount = 0;
+            let newS = S.toLowerCase();
+            for(i = 0; i < S.length; i++) {
+              if(newS.charAt(i) == "a" || newS.charAt(i) == "e" || newS.charAt(i) == "i" || newS.charAt(i) == "o" || newS.charAt(i) == "u") {
+                vowelsCount += 1;
+              }
+            }
+            return vowelsCount;
+        };
+        var Count_Consonants= (S) => 
+        {
+            let consonantsCount = S.length - Count_Vowels(S);
+            return consonantsCount;
+            
+        };
+    </pre>
+    </div>
   </body>
 </html>
