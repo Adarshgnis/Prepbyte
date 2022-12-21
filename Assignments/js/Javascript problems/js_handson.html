@@ -8,7 +8,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Operators and Expression</h1>
+    <nav>
+      <ul>
+        <li><a href="#operator">Operators and Expression</a></li>
+        <li><a href="#Decision_making">Decision making</a></li>
+        <li><a href="#Iter_statement">Iteration Statement</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#strings">String</a></li>
+        <li><a href="#">Objects</a></li>
+        <li><a href="#AOB">Array of Objects</a></li>
+        <li><a href="#function">Functions</a></li>
+        <li><a href="#">Inheritance and Prototype</a></li>
+        <li><a href="#">DOM</a></li>
+        <li><a href="#">Promises Async Await</a></li>
+      </ul>
+    </nav>
+    <h1 id="operator">Operators and Expression</h1>
     <div class="box">
       <h3>Add two Numbers</h3>
       <p>
@@ -341,7 +356,7 @@
         </pre
       >
     </div>
-    <h1>Iteration Statements</h1>
+    <h1 id="Iter_statement">Iteration Statements</h1>
     <div class="box">
       <h3>Find the number of digits</h3>
       <p>
@@ -511,7 +526,7 @@
         };
       </pre>
     </div>
-    <h1>Arrays</h1>
+    <h1 id="arrays">Arrays</h1>
     <div class="box">
       <h3>Find the Product</h3>
       <p>
@@ -779,7 +794,7 @@
       >
     </div>
 
-    <h1>Strings</h1>
+    <h1 id="strings">Strings</h1>
     <div class="box">
       <h3>Count Characters</h3>
       <p>
@@ -1069,6 +1084,229 @@
             
         };
     </pre>
+    </div>
+
+    <h1 id="AOB">Array Of Object</h1>
+    <div class="box">
+      <p>
+        <pre>
+          let studentRecords = [
+            {name: 'Jhon',id: 123 ,marks:98},
+            {name: 'baba',id: 101 ,marks:23},
+            {name: 'yaga',id: 200 ,marks:45},
+            {name: 'wick',id: 115 ,marks:75}
+          ]
+        </pre>
+      </p>
+    </div>
+    <div class="box">
+      <h3>We are interested in retrieving only the name of the students and all the names should be in caps.</h3>
+      <br />
+      <pre>
+        const nameUpper=studentRecords.map(element=>(element.name.toUpperCase()))
+        console.log(nameUpper)
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.</h3>
+      <br />
+      <pre>
+        const highMark=[]
+        studentRecords.forEach(element=>{
+           if(element.marks>50){
+              highMark.push(element) 
+           }
+        })
+        console.log(highMark)
+        </pre
+      >
+    </div>
+    <div class="box">
+      <h3>Retrieve the details of students who scored more than 50 marks and have id greater than 120.</h3>
+      <br />
+      <pre>
+        const highIdMarks=[];
+        studentRecords.forEach(item=>{
+        if(item.id>120 && item.marks>50){
+            highIdMarks.push(item)
+        }
+        })
+        console.log(highIdMarks);
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</h3>
+      <br />
+      <pre>
+        let sumOFMarks=0
+        studentRecords.map(item=>{
+            sumOFMarks+=item.marks;
+        })
+        console.log(sumOFMarks)
+      </pre>
+    </div>
+    <div class="box">
+      <h3>This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</h3>
+      <br />
+      <pre>
+        let nameOfHigh=[];
+        studentRecords.forEach(element=>{
+            if(element.marks>50){
+                nameOfHigh.push(element.name)
+            }
+        })
+        console.log(nameOfHigh);
+      </pre>
+    </div>
+    <div class="box">
+      <h3>This time we are required to print the sum of marks of the students with id > 120.</h3>
+      <br />
+      <pre>
+        let sum = 0;
+        studentRecords.forEach(element=>{
+            if(element.id>120){
+               sum += element.marks
+            }
+        })
+        console.log(sum);
+      </pre>
+    </div>
+    <div class="box">
+      <h3>This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</h3>
+      <br />
+      <pre>
+        studentRecords.forEach(element=>{
+          if(element.marks<50){
+              element.marks+=15
+          }
+        })
+        let marksSum=0;
+        studentRecords.forEach(element=>{
+            if(element.marks>50){
+              marksSum +=element.marks
+            }
+        })
+        console.log(marksSum)
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Create 6 objects, each object will have name, class, roll no as properties. Store these objects in an array of objects.</h3>
+      <br />
+      <pre>
+        function student(a,b,c){
+          this.name = a,
+          this.class = b,
+          this.rollno = c
+        }
+        const stuArr=[]
+        
+        let student1 = new student('jhon',1,12)
+        let student2 = new student('sown',1,13)
+        let student3 = new student('wick',1,14)
+        let student4 = new student('trixi',1,15)
+        let student5 = new student('taylor',1,16)
+        let student6 = new student('selena',1,17)
+        stuArr.push(student1)
+        stuArr.push(student2)
+        stuArr.push(student3)
+        stuArr.push(student4)
+        stuArr.push(student5)
+        stuArr.push(student6)
+        
+        console.log(stuArr);
+      </pre>
+    </div>
+
+    <h1 id="function">Functions</h1>
+    <div class="box">
+      <h3>Create one function with zero parameter having a console statement.</h3>
+      <br />
+      <pre>
+        function nopara(){
+          console.log("hello")
+        }
+        nopara();
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"</h3>
+      <br />
+      <pre>
+        const sum=(a,b)=>{
+          return a+b;
+          }
+          console.log(sum(3,4));
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Create one arrow function.</h3>
+      <br />
+      <pre>
+        const Arrowfun=()=>{
+          console.log("Arrow function.")
+        }
+        Arrowfun();
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Print output:</h3>
+      <br />
+      <pre> 
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl ();
+      </pre><br>
+      <p>undefined</p>
+    </div>
+    <div class="box">
+      <h3>Print output:</h3>
+      <br />
+      <pre>
+        var x=21
+        girl();
+        console.log(x);
+        function girl(){
+            console.log(x)
+            var x=20;
+        }
+      </pre>
+      <p>undefined and 21</p>
+    </div>
+    <div class="box">
+      <h3>Print output:</h3>
+      <br />
+      <pre>
+        var x =21;
+        a();
+        b();
+        function a(){
+            x=20;
+            console.log(x);
+        };
+        function b(){
+          x=40;
+          console.log(x);
+        };
+      </pre>
+      <p>20 40</p>
+    </div>
+    <div class="box">
+      <h3>Write a function that accepts parameter n and returns factorial of n</h3>
+      <br />
+      <pre>
+        function factorial(n){
+          var count=1;
+        for(let i=n; i>0;i--){
+            count *= i;
+        }
+        return count;
+        }
+        const facto=factorial(5);
+        console.log(facto)
+      </pre>
     </div>
   </body>
 </html>
