@@ -19,7 +19,7 @@
         <li><a href="#AOB">Array of Objects</a></li>
         <li><a href="#function">Functions</a></li>
         <li><a href="#">Inheritance and Prototype</a></li>
-        <li><a href="#">DOM</a></li>
+        <li><a href="#dom">DOM</a></li>
         <li><a href="#">Promises Async Await</a></li>
       </ul>
     </nav>
@@ -1308,5 +1308,96 @@
         console.log(facto)
       </pre>
     </div>
+
+    <h1 id="dom">DOM</h1>
+    <div class="box">
+      <h3>Write the code to access element which is having id as "text"</h3>
+      <br />
+      <pre>
+        document.getElementById('text').innerHTML='i have text id'
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Write the code to access element which is having tag as "h1"</h3>
+      <br />
+      <pre>
+        let htag=document.querySelector('h1');
+        htag.innerHTML ='new h1 tag';
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Write the code to access element which is having class as "box"</h3>
+      <br />
+      <pre>
+        let new = document.querySelector(".box");
+        new.innerHTML="i am having class name as a box";
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Change the heading from "Hello" to "Hello World" using DOM functions</h3>
+      <br />
+      <pre> 
+        document.querySelector("h1").innerText="Hello World";
+      </pre><br>
+    </div>
+    <div class="box">
+      <h3>Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</h3>
+      <br />
+      <pre>
+        let dir=document.querySelector('#dir');
+        dir.addEventListener('click',function(){
+            let direction= document.querySelector('.mainFlex');
+            if(direction.style.flexDirection =="column"){
+                direction.style.flexDirection='row';
+            }else{
+            direction.style.flexDirection='column';}
+        })
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Add one style attribute and give text color as red and id attribute and give the id value as "heading" in the above given h1 tag using DOM functions</h3>
+      <br />
+      <pre>
+        let h1tag=document.querySelectorAll("h1")[2];
+        h1tag.setAttribute("id","heading");
+        h1tag.style.color="red"
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h3>
+      <br />
+      <pre>
+        document.querySelector("#chngbtn").addEventListener('click',function(){
+          document.querySelector("#chngtext").innerText="Welcome to Elevation Academy";
+        })
+      </pre>
+    </div>
+    <div class="box">
+      <h3>Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h3>
+      <br />
+      <pre>
+        function clock(){
+          let time= new Date();
+          let hour= time.getHours();
+          let min= time.getMinutes();
+          let sec= time.getSeconds();
+      
+          document.getElementById('hh').innerHTML=hour + ":";
+          document.getElementById('mm').innerHTML=min + ":";
+          document.getElementById('ss').innerHTML=sec;
+      }
+      setInterval(clock,1000);
+      
+      function value(){
+          let sel=document.getElementById("years");
+          let msg= sel.options[sel.selectedIndex].text;
+          document.querySelector("#selValue").innerHTML=msg;
+      }
+      document.querySelector("#selBtn").addEventListener('click',function(){
+          value();
+      })
+      </pre>
+    </div>
+    
   </body>
 </html>
